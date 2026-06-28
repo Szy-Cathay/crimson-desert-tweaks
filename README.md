@@ -20,8 +20,12 @@ A collection of quality-of-life tweaks for **Crimson Desert**, implemented as an
 
 ## Installation
 
-1. Make sure you have an ASI loader installed (e.g. `version.dll` or `winmm.dll`)
-2. Place `crimson-desert-tweaks.asi` and `crimson-desert-tweaks.ini` in the game's `bin64` directory
+Install via [DMM](https://www.nexusmods.com/crimsondesert/mods/633):
+
+1. Drag the downloaded archive into the **DMM** window
+2. Switch to the **ASI Mods** tab
+3. Check **crimson-desert-tweaks** to enable it
+4. Click **Configure** to customize settings
 
 ## Configuration
 

@@ -20,8 +20,12 @@
 
 ## 安装方法
 
-1. 确保游戏已安装 ASI 加载器（如 `version.dll` 或 `winmm.dll`）
-2. 将 `crimson-desert-tweaks.asi` 和 `crimson-desert-tweaks.ini` 放入游戏 `bin64` 目录
+通过 [DMM](https://www.nexusmods.com/crimsondesert/mods/633) 安装：
+
+1. 将下载的压缩包直接拖入 **DMM** 窗口
+2. 切换到 **ASI 模组** 标签页
+3. 勾选 **crimson-desert-tweaks** 即可启用
+4. 点击 **配置** 按钮可自定义调整各项设置
 
 ## 配置文件
 
