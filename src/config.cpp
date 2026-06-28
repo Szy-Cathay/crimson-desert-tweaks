@@ -45,6 +45,22 @@ void ReadBoolIfPresent(const wchar_t* section,
     }
 }
 
+bool ReadBoolAlias(const wchar_t* section,
+                   const wchar_t* canonical_key,
+                   const wchar_t* alias_key,
+                   const bool default_value,
+                   const std::wstring& path) {
+    if (HasIniKey(section, canonical_key, path)) {
+        return ReadBool(section, canonical_key, default_value, path);
+    }
+
+    if (alias_key != nullptr && HasIniKey(section, alias_key, path)) {
+        return ReadBool(section, alias_key, default_value, path);
+    }
+
+    return default_value;
+}
+
 void ReadBoolAliasIfPresent(const wchar_t* section,
                             const wchar_t* canonical_key,
                             const wchar_t* alias_key,
@@ -52,7 +68,7 @@ void ReadBoolAliasIfPresent(const wchar_t* section,
                             const std::wstring& path) {
     if (target != nullptr && (HasIniKey(section, canonical_key, path) ||
                              (alias_key != nullptr && HasIniKey(section, alias_key, path)))) {
-        *target = ReadBool(section, canonical_key, *target, path);
+        *target = ReadBoolAlias(section, canonical_key, alias_key, *target, path);
     }
 }
 
