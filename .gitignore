@@ -1,0 +1,24 @@
+# Build output
+build/
+
+# IDE
+.vs/
+*.user
+*.suo
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Compiled ASI
+*.asi
+
+# Logs
+*.log
+
+# Local dev files (not for GitHub)
+CLAUDE.md
+PROGRESS.md
+
+# OS
+Thumbs.db
+Desktop.ini
