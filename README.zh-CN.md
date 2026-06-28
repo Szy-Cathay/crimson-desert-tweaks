@@ -68,5 +68,5 @@ cmake --build build --config Release
 - [Zydis](https://github.com/zyantific/zydis) — 反汇编引擎
 
 ### 逆向参考
-- [FLiNG Trainer](https://flingtrainer.com/) — 修改器参考
-- [bbfox0703](https://fearlessrevolution.com/) — Cheat Engine 表格 (1.12.02)
+- [FLiNG Trainer（风灵月影）](https://flingtrainer.com/trainer/crimson-desert-trainer/) — 修改器参考
+- [bbfox0703](https://www.nexusmods.com/crimsondesert/mods/64) — Cheat Engine 表格 (1.12.02)

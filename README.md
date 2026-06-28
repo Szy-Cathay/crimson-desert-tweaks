@@ -68,5 +68,5 @@ cmake --build build --config Release
 - [Zydis](https://github.com/zyantific/zydis) — Disassembler
 
 ### Reverse Engineering
-- [FLiNG Trainer](https://flingtrainer.com/) — Trainer reference
-- [bbfox0703](https://fearlessrevolution.com/) — Cheat Engine table (1.12.02)
+- [FLiNG Trainer](https://flingtrainer.com/trainer/crimson-desert-trainer/) — Trainer reference
+- [bbfox0703](https://www.nexusmods.com/crimsondesert/mods/64) — Cheat Engine table (1.12.02)
