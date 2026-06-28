@@ -56,5 +56,17 @@ cmake --build build --config Release
 
 ## Credits
 
-- Developed using Claude Code (Anthropic)
-- Built with [SafetyHook](https://github.com/cursey/safetyhook) and [Zydis](https://github.com/zyantific/zydis)
+### Development
+- Project led by **Szy-Cathay**. All code written by **Claude Code (Anthropic)** powered by **DeepSeek V4 PRO**
+
+### Upstream Code
+- [Orcax-1399/CrimsonDesert-player-status-modifier](https://github.com/Orcax-1399/CrimsonDesert-player-status-modifier) — Original mod
+- [sreerajjayaraj/player-status-modifier](https://github.com/sreerajjayaraj/player-status-modifier) — Intermediate fork, direct source of this project
+
+### Libraries
+- [SafetyHook](https://github.com/cursey/safetyhook) — Hooking framework
+- [Zydis](https://github.com/zyantific/zydis) — Disassembler
+
+### Reverse Engineering
+- [FLiNG Trainer](https://flingtrainer.com/) — Trainer reference
+- [bbfox0703](https://fearlessrevolution.com/) — Cheat Engine table (1.12.02)

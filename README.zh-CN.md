@@ -56,5 +56,17 @@ cmake --build build --config Release
 
 ## 致谢
 
-- 使用 Claude Code (Anthropic) 开发
-- 基于 [SafetyHook](https://github.com/cursey/safetyhook) 和 [Zydis](https://github.com/zyantific/zydis) 构建
+### 开发
+- 本项目由 **Szy-Cathay** 主导，全部代码由 **Claude Code (Anthropic)** 编写（模型 **DeepSeek V4 PRO**）
+
+### 上游代码
+- [Orcax-1399/CrimsonDesert-player-status-modifier](https://github.com/Orcax-1399/CrimsonDesert-player-status-modifier) — 原始模组
+- [sreerajjayaraj/player-status-modifier](https://github.com/sreerajjayaraj/player-status-modifier) — 中间分支，本项目直接来源
+
+### 技术库
+- [SafetyHook](https://github.com/cursey/safetyhook) — Hook 框架
+- [Zydis](https://github.com/zyantific/zydis) — 反汇编引擎
+
+### 逆向参考
+- [FLiNG Trainer](https://flingtrainer.com/) — 修改器参考
+- [bbfox0703](https://fearlessrevolution.com/) — Cheat Engine 表格 (1.12.02)
