@@ -184,15 +184,23 @@ Enable=1
 
 ## 联网操作规则 ⚠️
 
-**所有联网操作（网页搜索、WebFetch、git push/pull、curl、cmake 等联网操作）必须通过本机 VPN 代理。** 用户电脑 VPN 开机自启，对话时 VPN 必定处于开启状态。不经过代理直接联网会导致断联、未响应等问题。
+**所有联网操作（网页搜索、WebFetch、git push/pull、curl、cmake 等联网操作）必须通过当前启用的本机 VPN/系统代理。** 不要写死代理端口；VPN 软件可能更换本地代理地址。不经过代理直接联网会导致断联、未响应等问题。
 
-- **HTTP/HTTPS 代理**: `http://127.0.0.1:7890`
-- **Git 推送前**临时设置代理：
+- **获取当前系统代理**（PowerShell）:
+  ```powershell
+  (Get-ItemProperty "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings").ProxyServer
+  ```
+- **Git 推送前**使用当前代理：
   ```bash
-  git config http.proxy "http://127.0.0.1:7890"
+  git config http.proxy "http://<当前代理地址>"
   git push
   git config --unset http.proxy
   ```
+- 也可以使用一次性代理，不污染仓库配置：
+  ```bash
+  git -c http.proxy=http://<当前代理地址> push
+  ```
+- 如果系统代理为空或端口未监听，先停下说明情况，不要猜旧端口。
 - **CMake 下载依赖失败**时，用 GitHub 镜像作为备选：
   ```bash
   git config --global url."<镜像地址>".insteadOf "https://github.com"
@@ -215,7 +223,7 @@ Enable=1
 |---|------|----------|------|
 | 1 | **禁止 Write 覆盖已有文件** | `no-overwrite.ps1` | PROGRESS.md、AGENTS.md、CLAUDE.md、src/\*.cpp/h、CMakeLists.txt 等文件已存在时，禁止使用 Write 覆盖。必须先用 Read 读取内容，再用 Edit 在已有内容基础上追加或修改。**绝不能覆盖已有内容。** |
 | 2 | **禁止修改/删除 deps/safetyhook/** | `safetyhook-guard.ps1` | 这是 Hook 框架完整源码，构建必须，无例外。 |
-| 3 | **联网操作必须通过 VPN 代理** | `proxy-check.ps1` | 所有 git push/pull、curl、cmake 等联网操作必须设代理 `127.0.0.1:7890`，否则拦截。 |
+| 3 | **联网操作必须通过 VPN 代理** | `proxy-check.ps1` | 所有 git push/pull、curl、cmake 等联网操作必须显式使用当前本机 VPN/系统代理，不能写死旧端口；未设置代理时拦截。 |
 | 4 | **构建产物不自动复制** | `no-copy-build.ps1` | build/Release/ 下的产物留在原处，用户通过 DMM 手动安装 ASI 模组。AI 不负责复制。 |
 | 5 | **禁止危险 Git 还原** | `destructive-git-guard.ps1` | 禁止 `git reset --hard`、`git checkout -- .`、`git clean -fd` 等会丢失未提交改动的命令。 |
 | 6 | **禁止写入游戏目录** | `game-dir-guard.ps1` | 禁止复制、移动、删除、写入 `D:\steam\steamapps\common\Crimson Desert\bin64\`。 |
