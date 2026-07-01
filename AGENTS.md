@@ -1,4 +1,4 @@
-﻿# Crimson Desert Tweaks — 项目规则
+# Crimson Desert Tweaks — Codex 项目规则
 
 ## 开工必读清单（先读这里）
 
@@ -12,7 +12,7 @@
 6. **Hook 拦截优先**：遇到项目 Hook 拦截时，先停下说明原因，不要尝试绕过。
 7. **Hook 误拦截处理**：如果怀疑 Hook 误拦截，除非用户已在当前对话明确要求修改该 Hook，否则必须先询问用户；得到明确同意后才允许改 Hook 或放宽规则。
 8. **不更新 README 记流水账**：工作进度只写 `PROGRESS.md`；README 只在用户明确要求或公开说明确实变化时更新。
-9. **项目规则随仓库维护**：`CLAUDE.md`、`.claude/`、`PROGRESS.md` 属于项目规则/进度文件，随仓库提交和维护。
+9. **项目规则随仓库维护**：`AGENTS.md`、`CLAUDE.md`、`.claude/`、`PROGRESS.md` 属于项目规则/进度文件，随仓库提交和维护。
 
 ## 项目概述
 
@@ -202,7 +202,7 @@ Enable=1
 
 以下规则已配置为 PreToolUse Hook，违反时会被**系统自动拦截**（非 AI 自行判断）。被拦截后请查阅本条规则，**不要尝试绕过去**。
 
-**当前 Hook 部署状态**：`.claude/settings.json` 和 `.claude/hooks/` 已恢复。Hook 规则与下表对应。
+**当前 Hook 部署状态**：`.claude/settings.json` 和 `.claude/hooks/` 已部署。Codex 环境中等效规则通过 `AGENTS.md` 约束。
 
 如果认为某个规则是误拦截：
 
@@ -213,7 +213,7 @@ Enable=1
 
 | # | 规则 | Hook 文件 | 说明 |
 |---|------|----------|------|
-| 1 | **禁止 Write 覆盖已有文件** | `no-overwrite.ps1` | PROGRESS.md、CLAUDE.md、src/\*.cpp/h、CMakeLists.txt 等文件已存在时，禁止使用 Write 覆盖。必须先用 Read 读取内容，再用 Edit 在已有内容基础上追加或修改。**绝不能覆盖已有内容。** |
+| 1 | **禁止 Write 覆盖已有文件** | `no-overwrite.ps1` | PROGRESS.md、AGENTS.md、CLAUDE.md、src/\*.cpp/h、CMakeLists.txt 等文件已存在时，禁止使用 Write 覆盖。必须先用 Read 读取内容，再用 Edit 在已有内容基础上追加或修改。**绝不能覆盖已有内容。** |
 | 2 | **禁止修改/删除 deps/safetyhook/** | `safetyhook-guard.ps1` | 这是 Hook 框架完整源码，构建必须，无例外。 |
 | 3 | **联网操作必须通过 VPN 代理** | `proxy-check.ps1` | 所有 git push/pull、curl、cmake 等联网操作必须设代理 `127.0.0.1:7890`，否则拦截。 |
 | 4 | **构建产物不自动复制** | `no-copy-build.ps1` | build/Release/ 下的产物留在原处，用户通过 DMM 手动安装 ASI 模组。AI 不负责复制。 |
